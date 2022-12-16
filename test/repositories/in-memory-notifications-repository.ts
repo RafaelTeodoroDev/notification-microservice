@@ -1,5 +1,5 @@
-import { Notification } from "src/app/entities/notification/notification";
-import { NotificationRepository } from "src/app/repositories/notificationRepositories";
+import { Notification } from "@app/entities/notification/notification";
+import { NotificationRepository } from "@app/repositories/notificationRepositories";
 
 export class InMemoryNotificationsRepository implements NotificationRepository{
   public notifications: Notification[] = []
