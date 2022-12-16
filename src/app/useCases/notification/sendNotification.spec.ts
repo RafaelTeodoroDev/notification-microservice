@@ -1,4 +1,3 @@
-
 import { InMemoryNotificationsRepository } from "@test/repositories/in-memory-notifications-repository"
 import { SendNotificationUseCase } from "./SendNotificationUseCase"
 
