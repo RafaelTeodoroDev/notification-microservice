@@ -8,13 +8,13 @@ interface NotificationRequest{
   notificationId: string
 }
 
-type CancelNotificationResponse = void
+type ReadNotificationResponse = void
 
 @Injectable()
-export class CancelNotificationUseCase{
+export class ReadNotificationUseCase{
   constructor(private notificationsRepository: NotificationRepository){}
 
-  async execute(request: NotificationRequest): Promise<CancelNotificationResponse>{
+  async execute(request: NotificationRequest): Promise<ReadNotificationResponse>{
     const { notificationId } = request
 
     const notification = await this.notificationsRepository.findById(notificationId)
@@ -23,7 +23,7 @@ export class CancelNotificationUseCase{
       throw new NotificationNotFound()
     }
 
-    notification.cancel()
+    notification.read()
 
     await this.notificationsRepository.save(notification)
   }
